@@ -1,9 +1,11 @@
 import React, { StrictMode, Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import './index.css';
+import 'lib-flexible';
+import './index.less';
 import * as serviceWorker from './serviceWorker';
 
+// 懒加载
 const Demo1 = lazy(() => import('./Pages/Demo1'));
 const Demo2 = lazy(() => import('./Pages/Demo2'));
 
@@ -14,7 +16,7 @@ ReactDOM.render(
     <Suspense fallback={<Loading />}>
       <BrowserRouter>
         <Switch>
-          <Redirect from="/" exact to="/demo1" />
+          <Redirect exact from="/" to="/demo1" />
           <Route path="/demo1" component={Demo1} />
           <Route path="/demo2" component={Demo2} />
         </Switch>
