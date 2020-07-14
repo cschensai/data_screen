@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import echarts from 'echarts';
+import bar1 from './echartsJs/bar1';
+import bar2 from './echartsJs/bar2';
 import './index.less';
 
 export default class Demo1 extends Component {
@@ -10,6 +13,17 @@ export default class Demo1 extends Component {
    this.timer = setInterval(() => {
      this.setState({ currentTime: moment().format('YYYY年MM月DD日-HH时mm分ss秒') });
    }, 1000); 
+  }
+  // 设置charts图表
+  componentDidMount() {
+    // 左侧柱状图
+    const bar1Chart = bar1(echarts);
+    const bar2Chart = bar2(echarts);
+    // 屏幕缩放对chart图表进行自适应处理，调用实例的resize方法
+    window.onresize = () => {
+      bar1Chart.resize();
+      // bar2Chart.resize();
+    }
   }
   componentWillUnmount() {
     clearInterval(this.timer);
@@ -27,8 +41,8 @@ export default class Demo1 extends Component {
         <main>
           <div className="column">
             <div className="panel bar">
-              <h2>标题</h2>
-              <div className="chart">若表</div>
+              <h2>柱状图1-行业</h2>
+              <div className="chart"></div>
               <div className="panelFooter"></div>
             </div>
             <div className="panel line">
@@ -53,6 +67,13 @@ export default class Demo1 extends Component {
                 <div className="noBdItem">前端供应人数</div>
                 <div className="noBdItem">前端需求人数</div>
               </div>
+            </div>
+            {/* 地图 */}
+            <div className="map">
+              <div className="map1"></div>
+              <div className="map2"></div>
+              <div className="map3"></div>
+              <div className="chart">地图模块</div>
             </div>
           </div>
           <div className="column">

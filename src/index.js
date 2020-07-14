@@ -1,7 +1,7 @@
 import React, { StrictMode, Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-// 自适应
+// 自适应 js文件
 import './assets/flexible/flexible';
 import './index.less';
 import * as serviceWorker from './serviceWorker';
