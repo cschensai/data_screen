@@ -1,6 +1,6 @@
 export default function bar1(echarts) {
   // 实例化对象
-  const myChart = echarts.init(document.querySelector('.bar .chart'));
+  const myChart = echarts.init(document.querySelector('.bar1 .chart'));
   // 配置项
   const option = {
     color: ['#2f89cf'],
@@ -68,7 +68,7 @@ export default function bar1(echarts) {
         // bar 样式修改
         itemStyle: {
           barBorderRadius: 5,
-        }
+        },
       }
     ]
   };

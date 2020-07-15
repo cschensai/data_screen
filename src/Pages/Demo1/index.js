@@ -22,7 +22,7 @@ export default class Demo1 extends Component {
     // 屏幕缩放对chart图表进行自适应处理，调用实例的resize方法
     window.onresize = () => {
       bar1Chart.resize();
-      // bar2Chart.resize();
+      bar2Chart.resize();
     }
   }
   componentWillUnmount() {
@@ -40,7 +40,7 @@ export default class Demo1 extends Component {
         {/* 主题 */}
         <main>
           <div className="column">
-            <div className="panel bar">
+            <div className="panel bar1">
               <h2>柱状图1-行业</h2>
               <div className="chart"></div>
               <div className="panelFooter"></div>
@@ -77,7 +77,7 @@ export default class Demo1 extends Component {
             </div>
           </div>
           <div className="column">
-            <div className="panel bar">
+            <div className="panel bar2">
               <h2>标题</h2>
               <div className="chart">若表</div>
               <div className="panelFooter"></div>
