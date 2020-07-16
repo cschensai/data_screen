@@ -3,6 +3,7 @@ import moment from 'moment';
 import echarts from 'echarts';
 import bar1 from './echartsJs/bar1';
 import bar2 from './echartsJs/bar2';
+import line1 from './echartsJs/line1';
 import './index.less';
 
 export default class Demo1 extends Component {
@@ -19,10 +20,12 @@ export default class Demo1 extends Component {
     // 左侧柱状图
     const bar1Chart = bar1(echarts);
     const bar2Chart = bar2(echarts);
+    const line1Chart = line1(echarts);
     // 屏幕缩放对chart图表进行自适应处理，调用实例的resize方法
     window.onresize = () => {
       bar1Chart.resize();
       bar2Chart.resize();
+      line1Chart.resize();
     }
   }
   componentWillUnmount() {
@@ -45,9 +48,9 @@ export default class Demo1 extends Component {
               <div className="chart"></div>
               <div className="panelFooter"></div>
             </div>
-            <div className="panel line">
-              <h2>标题1</h2>
-              <div className="chart">若表</div>
+            <div className="panel line1">
+              <h2>折线图1</h2>
+              <div className="chart"></div>
               <div className="panelFooter"></div>
             </div>
             <div className="panel pie">
@@ -78,8 +81,8 @@ export default class Demo1 extends Component {
           </div>
           <div className="column">
             <div className="panel bar2">
-              <h2>标题</h2>
-              <div className="chart">若表</div>
+              <h2>柱状图2-就业率</h2>
+              <div className="chart"></div>
               <div className="panelFooter"></div>
             </div>
             <div className="panel line">

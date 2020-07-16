@@ -10,8 +10,7 @@ export default function bar2(echarts) {
     },
     // 不显示x轴
     xAxis: {
-      type: 'value',
-      boundaryGap: [0, 0.01]
+      show: false,
     },
     yAxis: [{
       type: 'category',
@@ -28,8 +27,9 @@ export default function bar2(echarts) {
       axisLabel: {
         color: 'white',
       },
+      // 反向坐标轴
+      inverse: true,
     }, {
-      type: 'category',
       data: [702, 350, 610, 793, 664, 780],
       // y轴线相关设置
       axisLine: {
@@ -39,12 +39,18 @@ export default function bar2(echarts) {
       axisLabel: {
         color: 'white',
       },
+      // 不显示y轴刻度
+      axisTick: {
+        show: false,
+      },
+      // 反向坐标轴
+      inverse: true,
     }],
     series: [
       {
         name: '2011年',
         type: 'bar',
-        data: [18203, 23489, 29034, 104970, 131744, 630230],
+        data: [78, 23, 66, 77, 23, 56],
         // 柱子之间的距离
         barCategoryGap: 50,
         // 柱子之间的宽度
@@ -69,7 +75,7 @@ export default function bar2(echarts) {
       {
         name: '2012年',
         type: 'bar',
-        data: [19325, 23438, 31000, 121594, 134141, 681807],
+        data: [100, 100, 100, 100, 100, 100],
         // 柱子之间的距离
         barCategoryGap: 50,
         // 柱子之间的宽度
