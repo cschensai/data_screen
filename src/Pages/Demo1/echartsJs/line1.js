@@ -51,6 +51,9 @@ export default function line1(echarts) {
 			axisTick: {
 				show: false,
 			},
+			axisLabel: {
+				color: '#4c9bfd',
+			},
     },
     series: [
 			{
