@@ -185,7 +185,7 @@ export default function map(echarts) {
       name: '杭州微拍堂总部'
     }]
   ];
-  const convertData = function (data) {
+  const convertData = data => {
     var res = [];
     for (var i = 0; i < data.length; i++) {
       var dataItem = data[i];
@@ -216,8 +216,9 @@ export default function map(echarts) {
       selectedMode: 'single',
       roam: false,
       itemStyle: {
+        // 修改地图区域颜色
         normal: {
-          areaColor: '#00177B',
+          areaColor: 'rgba(20, 41, 87, .1)',
           borderColor: '#0073DA',
           borderWidth: 1
         },
@@ -369,14 +370,13 @@ export default function map(echarts) {
       layoutCenter: ['50%', '50%'],
       layoutSize: "125%",
       itemStyle: {
-        normal: {
-          areaColor: 'rgba(20, 41, 87, .2)',
-          borderWidth: 3,
+          areaColor: 'rgba(20, 41, 87, .3)',
+          borderWidth: 1,
+          // 阴影颜色
           borderColor: '#00FEFF',
-          shadowColor: 'rgba(3,221,255,0.8)',
-          shadowBlur: 30
-        }
-      }
+          shadowColor: 'rgba(3, 221, 255, .4)',
+          shadowBlur: 10
+      },
     },
     series,
   };
