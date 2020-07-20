@@ -19,18 +19,32 @@ export default class Demo1 extends Component {
     give: parseInt(18020 + Math.random()),
     need: parseInt(26904 + Math.random()),
   }
+  calcNum = async () => {
+    return new Promise((resolve) => {
+      this.timer = setTimeout(() => {
+        this.setState(prev => ({
+          give: parseInt(prev.give + Math.random() * 688),
+          need: parseInt(prev.need + Math.random() * 710),
+        }), () => {
+          clearInterval(this.timer);
+        })
+        resolve();
+      }, 50);
+    })
+  }
+  renderDigital = async () => {
+    for (let index = 0; index < 5; index++) {
+      await this.calcNum();
+    }
+  }
   UNSAFE_componentWillMount() {
    this.timer1 = setInterval(() => {
      this.setState({ currentTime: moment().format('YYYY年MM月DD日-HH时mm分ss秒') });
    }, 1000); 
+   this.renderDigital();
    this.timer2 = setInterval(() => {
-    this.setState(prev => {
-      return {
-       give: parseInt(prev.give + Math.random() * 688),
-       need: parseInt(prev.need + Math.random() * 710),
-      }
-    });
-  }, Math.random() * 3000 + 3000); 
+      this.renderDigital();
+    }, Math.random() * 3000 + 3000);
   }
   // 设置charts图表
   componentDidMount() {
