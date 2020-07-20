@@ -1,4 +1,8 @@
 // 地图
+// 引入地图必须要引入下面的两个文件
+import 'echarts/map/js/china';
+import 'echarts/map/json/china.json';
+
 export default function map(echarts) {
   const myChart = echarts.init(document.querySelector('.map .chart'));
   const geoCoordMap = {

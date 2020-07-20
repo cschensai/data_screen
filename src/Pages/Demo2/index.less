@@ -1,0 +1,102 @@
+.demo2 {
+  // 底部背景色
+  // background-color: #101129;
+  background: url('../../assets/pictures/bg.png') no-repeat top center;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  line-height: 1.15;
+  header {
+    height: 1.25rem;
+    background: url('../../assets/pictures/head_bg.png') no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    h1 {
+      font-size: .475rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1rem;
+    }
+    .showTime {
+      position: absolute;
+      top: 0;
+      right: .375rem;
+      line-height: .9375rem;
+      color: rgba(255, 255, 255, .7);
+      font-size: .25rem;
+    }
+    .decoration5 {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 5rem;
+      height: .375rem;
+      // 剧中
+      transform: translateX(-50%);
+    }
+  }
+  // 主体部分
+  main {
+    // 防止内容图片在无限缩小时看不清
+    min-width: 1024px;
+    // 保证内容图片无限放大时不失真
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: .125rem .125rem 0;
+    display: flex;
+    // columns： 3:5:3
+    .column {
+      border: 1px solid red;
+      height: fit-content;
+      flex: 3;
+      &:nth-child(2){
+        flex: 4;
+        margin: 0 .125rem .1875rem;
+      }
+      // 公共边框设置
+      .panel {
+        border-style: solid;
+        border-color: red;
+        border-width: .625rem .5rem .275rem 1.6rem;
+        box-sizing: border-box;
+        // 边框图片设置
+        border-image: url(../../assets/pictures/border.png);
+        border-image-repeat: stretch;
+        border-image-slice: 50 40 22 128;
+        border-image-width: .625rem .5rem .275rem 1.6rem;
+        margin-bottom: .1875rem;
+        position: relative;
+        // 内容区域
+        .inner {
+          position: absolute;
+          top: -0.625rem;
+          right: -0.5rem;
+          bottom: -0.275rem;
+          left: -1.6rem;
+          padding: .25rem .375rem;
+        }
+      }
+      .overview {
+        height: 1.35rem;
+      }
+      .monitor {
+        height: 5.925rem;
+      }
+      .point {
+        height: 4.2rem;
+      }
+      // 地图样式
+      .map {
+        height: 6.5125rem;
+        margin-bottom: .1875rem;
+        .chart {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .user {
+        height: 4.2rem;
+      }
+    }
+  }
+}

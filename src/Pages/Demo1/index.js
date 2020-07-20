@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import echarts from 'echarts';
-// 引入地图必须要引入下面的两个文件
-import 'echarts/map/js/china';
-import 'echarts/map/json/china.json';
 import bar1 from './echartsJs/bar1';
 import bar2 from './echartsJs/bar2';
 import line1 from './echartsJs/line1';
