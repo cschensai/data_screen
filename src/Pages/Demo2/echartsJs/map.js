@@ -32,8 +32,9 @@ export default function map(echarts) {
 									intensity: 5,
 									shadow: true
 							},
+							// 会使用纹理作为环境光的光源
 							ambientCubemap: {
-									texture: pisaHdr,
+									texture: pisaHdr, // 纹理资源
 									diffuseIntensity: 0.2
 							}
 					}
