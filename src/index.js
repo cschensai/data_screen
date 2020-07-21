@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 // 自适应 js文件
 import './assets/flexible/flexible';
+// 全局样式引入
 import './index.less';
 import * as serviceWorker from './serviceWorker';
 

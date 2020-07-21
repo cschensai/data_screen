@@ -3,6 +3,8 @@ import moment from 'moment';
 import echarts from 'echarts';
 import Decoration5 from '@jiaminghi/data-view-react/es/decoration5';
 import map from './echartsJs/map';
+// mock数据
+import { overviewData } from './mock';
 import './index.less';
 
 export default class Demo2 extends Component {
@@ -25,6 +27,20 @@ export default class Demo2 extends Component {
   }
   componentWillUnmount() {
   }
+  // 数据概览
+  renderOverview = () => {
+    return overviewData.map(data => {
+      return (
+        <div className="item">
+          <p>{data.value.toLocaleString()}</p>
+          <span>
+            <i className="iconfont iconicon_status-dot-small" style={{ color: data.color }}></i>
+            <label>{data.label}</label>
+          </span>
+        </div>
+      )
+    })
+  }
   render() {
     const { currentTime } = this.state;
     return (
@@ -37,9 +53,11 @@ export default class Demo2 extends Component {
         </header>
         <main>
           <div className="column">
-            {/* 数据概论 */}
+            {/* 数据概览 */}
             <div className="panel overview">
-              <div className="inner"></div>
+              <div className="inner">
+                { this.renderOverview() }
+              </div>
             </div>
             {/* 设备监控 */}
             <div className="panel monitor">
@@ -60,7 +78,29 @@ export default class Demo2 extends Component {
               <div className="inner"></div>
             </div>
           </div>
+          {/* 右侧列 */}
           <div className="column">
+            {/* 订单 */}
+            <div className="panel order">
+              <div className="inner"></div>
+            </div>
+            {/* 销售额 */}
+            <div className="panel sale">
+              <div className="inner"></div>
+            </div>
+            {/* 渠道分布 && 季度销售*/}
+            <div className="wrap">
+              <div className="panel channel">
+                <div className="inner"></div>
+              </div>
+              <div className="panel quarter">
+                <div className="inner"></div>
+              </div>
+            </div>
+            {/* 全国热榜 */}
+            <div className="panel hot">
+              <div className="inner"></div>
+            </div>
           </div>
         </main>
       </div>

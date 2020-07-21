@@ -44,14 +44,14 @@
     margin: 0 auto;
     padding: .125rem .125rem 0;
     display: flex;
+    color: #fff;
     // columns： 3:5:3
     .column {
-      border: 1px solid red;
       height: fit-content;
       flex: 3;
       &:nth-child(2){
         flex: 4;
-        margin: 0 .125rem .1875rem;
+        margin: 0 .125rem;
       }
       // 公共边框设置
       .panel {
@@ -78,6 +78,29 @@
       }
       .overview {
         height: 1.35rem;
+        .inner {
+          display: flex;
+          align-items: center;
+          .item {
+            flex: 1;
+            text-align: center;
+            p {
+              font-size: .3rem;
+              margin-bottom: .125rem;
+            }
+            span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              i {
+                font-size: .3rem;
+              }
+              label {
+                color: #4c9bfd;
+              }
+            }
+          }
+        }
       }
       .monitor {
         height: 5.925rem;
@@ -95,7 +118,27 @@
         }
       }
       .user {
-        height: 4.2rem;
+        height: 5.1625rem;
+      }
+      .order {
+        height: 1.8rem;
+      }
+      .sale {
+        height: 3.05rem;
+      }
+      .wrap {
+        display: flex;
+        .channel,
+        .quarter {
+          flex: 1;
+          height: 2.8625rem;
+        }
+        .channel {
+          margin-right: .1875rem;
+        }
+      }
+      .hot {
+        height: 3.6125rem;
       }
     }
   }
