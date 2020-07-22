@@ -1,6 +1,7 @@
 import React, { StrictMode, Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import Loading from '@jiaminghi/data-view-react/es/loading';
 // 自适应 js文件
 import './assets/flexible/flexible';
 // 全局样式引入
@@ -11,11 +12,11 @@ import * as serviceWorker from './serviceWorker';
 const Demo1 = lazy(() => import('./Pages/Demo1'));
 const Demo2 = lazy(() => import('./Pages/Demo2'));
 
-const Loading = () => <div style={{ width: '100%', textAlign: 'center', marginTop: '200px' }}>loading...</div>
+const LoadingComp = () => <div style={{ width: '100%', textAlign: 'center', marginTop: '200px' }}><Loading>努力加载中...</Loading></div>
 
 ReactDOM.render(
   <StrictMode>
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<LoadingComp />}>
       <BrowserRouter>
         <Switch>
           <Redirect exact from="/" to="/demo1" />

@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import echarts from 'echarts';
 import Decoration5 from '@jiaminghi/data-view-react/es/decoration5';
+import ScrollBoard from '@jiaminghi/data-view-react/es/scrollBoard';
 import map from './echartsJs/map';
 // mock数据
-import { overviewData } from './mock';
+import { overviewData, monitorData } from './mock';
 import './index.less';
 
 export default class Demo2 extends Component {
@@ -61,7 +62,9 @@ export default class Demo2 extends Component {
             </div>
             {/* 设备监控 */}
             <div className="panel monitor">
-              <div className="inner"></div>
+              <div className="inner">
+                <ScrollBoard config={monitorData} />
+              </div>
             </div>
             {/* 点位分布统计 */}
             <div className="panel point">
