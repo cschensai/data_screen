@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import echarts from 'echarts';
+import Decoration2 from '@jiaminghi/data-view-react/es/decoration2';
 import Decoration5 from '@jiaminghi/data-view-react/es/decoration5';
 import ScrollBoard from '@jiaminghi/data-view-react/es/scrollBoard';
 import map from './echartsJs/map';
+import radarFun from './echartsJs/radar';
 // mock数据
-import { overviewData, monitorData } from './mock';
+import { overviewData, monitorData, pointPanelData } from './mock';
 import './index.less';
 
 export default class Demo2 extends Component {
@@ -21,24 +23,29 @@ export default class Demo2 extends Component {
   componentDidMount() {
     // 地图
     const mapChart = map(echarts);
+    const radarFunChart = radarFun(echarts);
     // 屏幕缩放对chart图表进行自适应处理，调用实例的resize方法
     window.onresize = () => {
       mapChart.resize();
+      radarFunChart.resize();
     }
   }
   componentWillUnmount() {
   }
-  // 数据概览
-  renderOverview = () => {
-    return overviewData.map(data => {
+  // 数据展示
+  renderDataItem = (arr = [], isShowLine) => {
+    return arr.map((data, index) => {
       return (
-        <div className="item">
-          <p>{data.value.toLocaleString()}</p>
-          <span>
-            <i className="iconfont iconicon_status-dot-small" style={{ color: data.color }}></i>
-            <label>{data.label}</label>
-          </span>
-        </div>
+        <Fragment>
+          <div className="item">
+            <p>{data.value.toLocaleString()}</p>
+            <span>
+              <i className="iconfont iconicon_status-dot-small" style={{ color: data.color }}></i>
+              <label>{data.label}</label>
+            </span>
+          </div>
+          {isShowLine && index === 0 && <Decoration2 style={{width: '100%', height: '5px'}} />}
+        </Fragment>
       )
     })
   }
@@ -57,7 +64,7 @@ export default class Demo2 extends Component {
             {/* 数据概览 */}
             <div className="panel overview">
               <div className="inner">
-                { this.renderOverview() }
+                {this.renderDataItem(overviewData)}
               </div>
             </div>
             {/* 设备监控 */}
@@ -68,7 +75,15 @@ export default class Demo2 extends Component {
             </div>
             {/* 点位分布统计 */}
             <div className="panel point">
-              <div className="inner"></div>
+              <div className="inner">
+                <h3>职能分布</h3>
+                <div className="content">
+                  <div className="chart"></div>
+                  <div className="desc">
+                    {this.renderDataItem(pointPanelData, true)}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="column">

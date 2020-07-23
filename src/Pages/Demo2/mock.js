@@ -17,7 +17,7 @@ export const overviewData = [{
   color: '#fe5835',
 }];
 // 监控数据
-export const monitorData =  {
+export const monitorData = {
   header: ['列1', '列2', '列3'],
   data: [
     ['行1列1', '行1列2', '行1列3'],
@@ -47,3 +47,12 @@ export const monitorData =  {
   rowNum: 8,
 }
 
+export const pointPanelData = [{
+  label: '职位总数',
+  value: 32011,
+  color: '#dc635d',
+}, {
+  label: '新增职位',
+  value: 4180,
+  color: '#e3cd45',
+}]
