@@ -13,7 +13,8 @@ export default function radarFun(echarts) {
       itemWidth: 15,
       itemHeight: 8,
       textStyle: {
-        color: '#459bfd',
+        color: 'rgba(255, 255, 255, .8)',
+        fontSize: 10,
       },
       // 位置
       bottom: 0,
@@ -22,8 +23,9 @@ export default function radarFun(echarts) {
       // shape: 'circle',
       name: {
         textStyle: {
-          color: '#459bfd',
+          color: 'rgba(255, 255, 255, .8)',
           padding: [3, 5],
+          fontSize: 10,
         },
       },
       // 指示器名称和指示器轴的距离

@@ -8,6 +8,8 @@ export default function pie1(echarts) {
         formatter: '{a} <br/>{b}: {c} ({d}%)'
     },
     legend: {
+      // 可滚动翻页的图例
+        type: 'scroll',
         orient: 'horizontal',
         bottom: 0,
         // 修改图例宽高

@@ -46,7 +46,7 @@ export const monitorData = {
   // 表行数
   rowNum: 8,
 }
-
+// 职能分布数据
 export const pointPanelData = [{
   label: '职位总数',
   value: 32011,
@@ -54,5 +54,56 @@ export const pointPanelData = [{
 }, {
   label: '新增职位',
   value: 4180,
-  color: '#e3cd45',
-}]
+  color: '#80ad8a',
+}];
+// 用户统计数据
+export const userPanelData = [{
+  label: '用户总量',
+  value: 512068,
+  color: '#dc635d',
+}, {
+  label: '新增用户',
+  value: 98980,
+  color: '#80ad8a',
+}];
+// 销售面板数据
+export const orderTabs = ['365天', '90天', '30天', '24小时'];
+export const orderPanelData = {
+  '365天': [{
+    label: '订单量',
+    value: 876567,
+    color: '#dc635d',
+  }, {
+    label: '销售额（万）',
+    value: 9878,
+    color: '#eacfa9',
+  }],
+  '90天': [{
+    label: '订单量',
+    value: 576567,
+    color: '#dc635d',
+  }, {
+    label: '销售额（万）',
+    value: 3878,
+    color: '#eacfa9',
+  }],
+  '30天': [{
+    label: '订单量',
+    value: 76567,
+    color: '#dc635d',
+  }, {
+    label: '销售额（万）',
+    value: 1878,
+    color: '#eacfa9',
+  }],
+  '24小时': [{
+    label: '订单量',
+    value: 6567,
+    color: '#dc635d',
+  }, {
+    label: '销售额（万）',
+    value: 878,
+    color: '#eacfa9',
+  }]
+}
+

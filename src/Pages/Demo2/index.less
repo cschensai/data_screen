@@ -116,6 +116,42 @@
           }
         }
       }
+      // 公共样式
+      .commonContent() {
+        .chart {
+          flex: 2;
+          margin-right: .1875rem;
+        }
+        .desc {
+          flex: 1;
+          background: url(../../assets/pictures/rect.png) no-repeat;
+          background-size: 100% 100%;
+          .item {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+              color: #fff;
+              font-size: .275rem;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            i {
+              font-size: .3rem;
+            }
+            span {
+              display: flex;
+              align-items: center;
+              label {
+                font-size: .175rem;
+                color: #4c9bfd;
+              }
+            }
+          }
+        }
+      }
       .point {
         height: 4.2rem;
         .inner {
@@ -130,39 +166,7 @@
           .content {
             height: 3.25rem;
             display: flex;
-            .chart {
-              flex: 2;
-              margin-right: .1875rem;
-            }
-            .desc {
-              flex: 1;
-              background: url(../../assets/pictures/rect.png) no-repeat;
-              background-size: 100% 100%;
-              .item {
-                height: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                p {
-                  color: #fff;
-                  font-size: .275rem;
-                  font-weight: bold;
-                  margin-bottom: 5px;
-                }
-                i {
-                  font-size: .3rem;
-                }
-                span {
-                  display: flex;
-                  align-items: center;
-                  label {
-                    font-size: .175rem;
-                    color: #4c9bfd;
-                  }
-                }
-              }
-            }
+            .commonContent();
           }
         }
       }
@@ -177,19 +181,73 @@
       }
       .user {
         height: 5.1625rem;
+        .inner {
+          h3 {
+            height: .45rem;
+            line-height: .45rem;
+            color: #fff;
+            font-size: .25rem;
+            font-weight: normal;
+            text-align: center;
+          }
+          .content {
+            height: 4.2125rem;
+            display: flex;
+            .commonContent();
+            .chart {
+              flex: 3;
+            }
+          }
+        }
       }
       .order {
         height: 1.8rem;
+        .desc {
+          display: flex;
+          .item {
+            flex: 1;
+            text-align: center;
+            p {
+              font-size: .3rem;
+              margin-bottom: .125rem;
+            }
+            span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              i {
+                font-size: .3rem;
+              }
+              label {
+                font-size: .175rem;
+                color: #4c9bfd;
+              }
+            }
+          }
+        }
       }
       .sale {
-        height: 3.05rem;
+        height: 3.25rem;
+        .inner {
+          h3 {
+            height: .45rem;
+            line-height: .45rem;
+            color: #fff;
+            font-size: .25rem;
+            font-weight: normal;
+            text-align: center;
+          }
+          .chart {
+            height: 2.3rem;
+          }
+        }
       }
       .wrap {
         display: flex;
         .channel,
         .quarter {
           flex: 1;
-          height: 2.8625rem;
+          height: 2.6625rem;
         }
         .channel {
           margin-right: .1875rem;

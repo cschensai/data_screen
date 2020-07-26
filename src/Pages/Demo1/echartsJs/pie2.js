@@ -6,6 +6,8 @@ export default function pie2(echarts) {
       formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     legend: {
+      // 可滚动翻页的图例
+      type: 'scroll',
       // 修改图例的位置
       bottom: 0,
       // 修改图例样式
