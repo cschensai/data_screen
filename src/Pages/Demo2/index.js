@@ -10,7 +10,7 @@ import radarFun from './echartsJs/radar';
 import bar from './echartsJs/bar';
 import line from './echartsJs/line';
 // mock数据
-import { overviewData, monitorData, pointPanelData, userPanelData, orderTabs, orderPanelData } from './mock';
+import { overviewData, monitorData, pointPanelData, userPanelData, orderTabs, orderPanelData, channelData } from './mock';
 import './index.less';
 
 export default class Demo2 extends Component {
@@ -39,6 +39,8 @@ export default class Demo2 extends Component {
     }
   }
   componentWillUnmount() {
+    this.timer1 && clearInterval(this.timer1);
+    window.lineTimer2 && clearInterval(window.lineTimer2);
   }
   // 数据展示
   renderDataItem = (arr = [], isShowLine) => {
@@ -59,6 +61,14 @@ export default class Demo2 extends Component {
   }
   handleTabs = async val => {
     this.setState({ tabVal: val });
+  }
+  renderChannelData = () => {
+    return channelData.map((channel, index) => (
+      <div className="item" key={index}>
+        <div className="top"><span>{channel.value}</span>%</div>
+        <div className="bottom"><i className={`iconfont ${channel.icon}`}></i>{channel.label}</div>
+      </div>
+    ))
   }
   render() {
     const { currentTime, tabVal } = this.state;
@@ -133,13 +143,18 @@ export default class Demo2 extends Component {
                 <div className="chart"></div>
               </div>
             </div>
-            {/* 渠道分布 && 季度销售*/}
+            {/* 渠道分布 && 一季度销售进度 */}
             <div className="wrap">
               <div className="panel channel">
-                <div className="inner"></div>
+                <div className="inner">
+                  <h3>渠道分布</h3>
+                  {this.renderChannelData(channelData)}
+                </div>
               </div>
               <div className="panel quarter">
-                <div className="inner"></div>
+                <div className="inner">
+                  <h3>一季度销售进度</h3>
+                </div>
               </div>
             </div>
             {/* 全国热榜 */}

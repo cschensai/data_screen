@@ -1,3 +1,4 @@
+
 export default function line(echarts) {
   const myChart = echarts.init(document.querySelector('.sale .inner .chart'));
   const xData = function () {
@@ -164,38 +165,7 @@ export default function line(echarts) {
             }
           ]
         },
-        data: [
-          509,
-          917,
-          2455,
-          2610,
-          2719,
-          3033,
-          3044,
-          3085,
-          2708,
-          2809,
-          2117,
-          2000,
-          1455,
-          1210,
-          719,
-          733,
-          944,
-          2285,
-          2208,
-          3372,
-          3936,
-          3693,
-          2962,
-          2810,
-          3519,
-          2455,
-          2610,
-          2719,
-          2484,
-          2078
-        ],
+        data: [],
         // 平滑设置
         smooth: true,
       }, {
@@ -236,44 +206,18 @@ export default function line(echarts) {
             }
           ]
         },
-        data: [
-          2136,
-          3693,
-          2962,
-          3810,
-          3519,
-          3484,
-          3915,
-          3823,
-          3455,
-          4310,
-          4019,
-          3433,
-          3544,
-          3885,
-          4208,
-          3372,
-          3484,
-          3915,
-          3748,
-          3675,
-          4009,
-          4433,
-          3544,
-          3285,
-          4208,
-          3372,
-          3484,
-          3915,
-          3823,
-          4265,
-          4298
-        ],
+        data: [],
         // 平滑设置
         smooth: true,
       },
     ]
   }
-  myChart.setOption(option);
+  function setLineData () {
+    option.series[0].data = new Array(30).fill().map(_ => parseInt(600 + Math.random() * 1000));
+    option.series[1].data = new Array(30).fill().map(_ => parseInt(1000 + Math.random() * 1000));
+    myChart.setOption(option);
+  }
+  setLineData()
+  window.lineTimer2 = setInterval(setLineData, 4000);
   return myChart;
 }

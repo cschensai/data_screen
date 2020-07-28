@@ -38,7 +38,7 @@ export const monitorData = {
   // 列对齐方式
   align: ['center'],
   // 表头背景色
-  headerBGC: 'rgba(255, 255, 255, .1)',
+  headerBGC: 'rgba(1, 26, 107, .5)',
   // 奇数行
   oddRowBGC: '',
   // 偶数行
@@ -106,4 +106,21 @@ export const orderPanelData = {
     color: '#eacfa9',
   }]
 }
-
+// 渠道数据
+export const channelData = [{
+  value: 39,
+  label: '机场',
+  icon: 'iconjiesongjifuwu',
+}, {
+  value: 28,
+  label: '商场',
+  icon: 'iconshangchang',
+}, {
+  value: 20,
+  label: '地铁',
+  icon: 'iconditie',
+}, {
+  value: 13,
+  label: '火车站',
+  icon: 'iconhuochezhan',
+}]
