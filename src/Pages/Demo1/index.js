@@ -35,11 +35,11 @@ export default class Demo1 extends Component {
     }
   }
   UNSAFE_componentWillMount() {
-   this.timer1 = setInterval(() => {
+    this.timer1 = setInterval(() => {
      this.setState({ currentTime: moment().format('YYYY年MM月DD日-HH时mm分ss秒') });
-   }, 1000); 
-   this.renderDigital();
-   this.timer2 = setInterval(() => {
+    }, 1000); 
+    this.renderDigital();
+    this.timer2 = setInterval(() => {
       this.renderDigital();
     }, Math.random() * 3000 + 3000);
   }
@@ -113,7 +113,7 @@ export default class Demo1 extends Component {
               <div className="map1"></div>
               <div className="map2"></div>
               <div className="map3"></div>
-              <div className="chart">地图模块</div>
+              <div className="chart"></div>
             </div>
           </div>
           <div className="column">

@@ -21,7 +21,7 @@ export default class Demo2 extends Component {
   UNSAFE_componentWillMount() {
     this.timer1 = setInterval(() => {
       this.setState({ currentTime: moment().format('YYYY年MM月DD日-HH时mm分ss秒') });
-    }, 1000); 
+    }, 1000);
   }
   // 设置charts图表
   componentDidMount() {

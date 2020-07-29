@@ -41,6 +41,8 @@
       &:nth-child(2){
         flex: 5;
         margin: 0 .125rem .1875rem;
+        display: flex;
+        flex-direction: column;
       }
       .panel {
         height: 3.875rem;
@@ -106,7 +108,6 @@
         }
         .chart {
           height: 3rem;
-          // background-color: #fff;
         }
       }
       // 单独设置
@@ -193,7 +194,8 @@
         }
       }
       .map {
-        height: 10.125rem;
+        flex: 1;
+        // height: 10.125rem;
         position: relative;
         display: flex;
         justify-content: center;
@@ -207,8 +209,8 @@
           opacity: .3;
         }
         .map2 {
-          width: 8.0375rem;
-          height: 8.0375rem;
+          width: 7.4rem;
+          height: 7.4rem;
           position: absolute;
           background: url(../../assets/images/lbx.png);
           background-size: 100% 100%;
