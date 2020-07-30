@@ -88,7 +88,7 @@
               font-size: .3rem;
               margin-bottom: .125rem;
             }
-            span {
+            .bottom {
               display: flex;
               justify-content: center;
               align-items: center;
@@ -141,7 +141,7 @@
             i {
               font-size: .3rem;
             }
-            span {
+            .bottom {
               display: flex;
               align-items: center;
               label {
@@ -211,7 +211,7 @@
               font-size: .3rem;
               margin-bottom: .125rem;
             }
-            span {
+            .bottom {
               display: flex;
               justify-content: center;
               align-items: center;
@@ -276,9 +276,65 @@
             }
           }
         }
+        .quarter {
+          .inner {
+            display: flex;
+            flex-direction: column;
+            .chart {
+              flex: 1;
+            }
+            .desc {
+              display: flex;
+              .item {
+                flex: 1;
+                text-align: center;
+                p {
+                  font-size: .25rem;
+                  margin-bottom: .0625rem;
+                  .unit {
+                    font-size: .15rem;
+                    margin-left: 5px;
+                  }
+                }
+                .bottom {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  i {
+                    font-size: .3rem;
+                  }
+                  label {
+                    font-size: .15rem;
+                    color: #4c9bfd;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
       .hot {
         height: 3.6125rem;
+        .inner {
+          display: flex;
+          h3 {
+            font-size: .25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .subTitle {
+              font-weight: normal;
+              font-size: .175rem;
+              color: #519bac;
+            }
+          }
+          .country {
+            flex: 1;
+          }
+          .province {
+            flex: 2;
+          }
+        }
       }
     }
   }

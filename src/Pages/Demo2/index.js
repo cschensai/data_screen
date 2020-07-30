@@ -9,8 +9,9 @@ import map from './echartsJs/map';
 import radarFun from './echartsJs/radar';
 import bar from './echartsJs/bar';
 import line from './echartsJs/line';
+import pie from './echartsJs/pie';
 // mock数据
-import { overviewData, monitorData, pointPanelData, userPanelData, orderTabs, orderPanelData, channelData } from './mock';
+import { overviewData, monitorData, pointPanelData, userPanelData, orderTabs, orderPanelData, channelData, quarterSaleData } from './mock';
 import './index.less';
 
 export default class Demo2 extends Component {
@@ -30,12 +31,14 @@ export default class Demo2 extends Component {
     const radarFunChart = radarFun(echarts);
     const barChart = bar(echarts);
     const lineChart = line(echarts);
+    const pieChart = pie(echarts);
     // 屏幕缩放对chart图表进行自适应处理，调用实例的resize方法
     window.onresize = () => {
       mapChart.resize();
       radarFunChart.resize();
       barChart.resize();
       lineChart.resize();
+      pieChart.resize();
     }
   }
   componentWillUnmount() {
@@ -48,8 +51,11 @@ export default class Demo2 extends Component {
       return (
         <Fragment key={index}>
           <div className="item">
-            <p>{data.value.toLocaleString()}</p>
-            <span>
+            <p>
+              {data.value.toLocaleString()}
+              {data.unit && <span className="unit">{data.unit}</span>}
+            </p>
+            <span className="bottom">
               <i className="iconfont iconicon_status-dot-small" style={{ color: data.color }}></i>
               <label>{data.label}</label>
             </span>
@@ -154,12 +160,26 @@ export default class Demo2 extends Component {
               <div className="panel quarter">
                 <div className="inner">
                   <h3>一季度销售进度</h3>
+                  <div className="chart"></div>
+                  <div className="desc">
+                    {this.renderDataItem(quarterSaleData)}
+                  </div>
                 </div>
               </div>
             </div>
             {/* 全国热榜 */}
             <div className="panel hot">
-              <div className="inner"></div>
+              <div className="inner">
+                <div className="country">
+                  <h3>全国热榜</h3>
+                </div>
+                <div className="province">
+                  <h3>
+                    各省热榜
+                    <span className="subTitle">// <em>近30日</em> //</span>
+                  </h3>
+                </div>
+              </div>
             </div>
           </div>
         </main>

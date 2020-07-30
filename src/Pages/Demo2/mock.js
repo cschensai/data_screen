@@ -124,3 +124,14 @@ export const channelData = [{
   label: '火车站',
   icon: 'iconhuochezhan',
 }]
+// 一季度销售进度
+export const quarterSaleData = [{
+  label: '销售额',
+  value: 1321,
+  color: '#7ebdaa',
+}, {
+  label: '同比增长',
+  value: 150,
+  color: '#fb5b3d',
+  unit: '%'
+}];
