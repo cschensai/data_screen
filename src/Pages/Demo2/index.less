@@ -249,6 +249,10 @@
           flex: 1;
           height: 2.6625rem;
         }
+        // 标题
+        h3 {
+          font-size: .25rem;
+        }
         .channel {
           margin-right: .1875rem;
           .inner {
@@ -261,14 +265,16 @@
               align-items: center;
               .top {
                 margin-bottom: 10px;
-                span {
-                  font-size: .3rem;
-                  font-weight: bold;
-                  margin-right: 5px;
+                font-size: .25rem;
+                margin-bottom: .0625rem;
+                .unit {
+                  font-size: .15rem;
+                  margin-left: 5px;
                 }
               }
               .bottom {
                 color: #4c9bfd;
+                font-size: .15rem;
                 i {
                   margin-right: 5px;
                 }
@@ -317,6 +323,7 @@
         height: 3.6125rem;
         .inner {
           display: flex;
+          // 标题
           h3 {
             font-size: .25rem;
             display: flex;
@@ -330,9 +337,85 @@
           }
           .country {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            .countryRank {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              margin-right: .1875rem;
+              .rank {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                i {
+                  font-size: .45rem;
+                }
+                span {
+                  font-size: .225rem;
+                  color: #4c9bfd;
+                }
+                .iconfirst {
+                  color: #df3936;
+                }
+                .iconsecond {
+                  color: #68d8fe;
+                }
+                .iconthird {
+                  color: #4c9bfd;
+                }
+              }
+            }
           }
           .province {
             flex: 2;
+            display: flex;
+            flex-direction: column;
+            .provinceRank {
+              margin-top: .125rem;
+              flex: 1;
+              display: flex;
+              font-size: .2rem;
+              .left,
+              .right {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                .leftItem,
+                .rightItem {
+                  flex: 1;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 .125rem;
+                  i {
+                    margin-left: 5px;
+                    font-size: .175rem;
+                  }
+                  .iconarrow-up {
+                    color: #dc3c33;
+                  }
+                  .iconarrowdown {
+                    color: #36be90;
+                  }
+                }
+              }
+              .leftItem {
+                justify-content: space-between;
+                color: #4c9bfd;
+              }
+              .rightItem {
+                justify-content: space-between;
+                color: #40c9d3;
+                background-color: rgba(255, 255, 255, .1);
+              }
+              .activeLeftItem {
+                background-color: rgba(255, 255, 255, .1);
+              }
+              .inactiveRightItem {
+                height: 0;
+              }
+            }
           }
         }
       }

@@ -135,3 +135,132 @@ export const quarterSaleData = [{
   color: '#fb5b3d',
   unit: '%'
 }];
+// 全国热榜
+export const countryHotData = ['可爱多', '娃哈哈', '喜之郎'];
+// 各省热榜
+export const provinceHotData = [{
+  label: '北京',
+  value: 25179,
+  type: 'up',
+  category: [{
+    label: '八喜',
+    value: 6080,
+    type: 'up',
+  }, {
+    label: '娃哈哈',
+    value: 7880,
+    type: 'up',
+  }, {
+    label: '小洋人',
+    value: 1298,
+    type: 'down',
+  }, {
+    label: '好多鱼',
+    value: 10080,
+    type: 'up',
+  }, {
+    label: '可爱多',
+    value: 4080,
+    type: 'down',
+  }],
+}, {
+  label: '河北',
+  value: 9876,
+  type: 'down',
+  category: [{
+    label: '小洋人',
+    value: 1298,
+    type: 'down',
+  }, {
+    label: '八喜',
+    value: 6080,
+    type: 'up',
+  }, {
+    label: '娃哈哈',
+    value: 7880,
+    type: 'up',
+  }, {
+    label: '好多鱼',
+    value: 10080,
+    type: 'up',
+  }, {
+    label: '可爱多',
+    value: 4080,
+    type: 'down',
+  }],
+}, {
+  label: '上海',
+  value: 19870,
+  type: 'down',
+  category: [{
+    label: '娃哈哈',
+    value: 7880,
+    type: 'up',
+  }, {
+    label: '小洋人',
+    value: 1298,
+    type: 'down',
+  }, {
+    label: '八喜',
+    value: 6080,
+    type: 'up',
+  }, {
+    label: '好多鱼',
+    value: 10080,
+    type: 'up',
+  }, {
+    label: '可爱多',
+    value: 4080,
+    type: 'down',
+  }],
+}, {
+  label: '江苏',
+  value: 2765,
+  type: 'up',
+  category: [{
+    label: '娃哈哈',
+    value: 7880,
+    type: 'up',
+  }, {
+    label: '可爱多',
+    value: 4080,
+    type: 'down',
+  }, {
+    label: '小洋人',
+    value: 1298,
+    type: 'down',
+  }, {
+    label: '八喜',
+    value: 6080,
+    type: 'up',
+  }, {
+    label: '好多鱼',
+    value: 10080,
+    type: 'up',
+  }],
+}, {
+  label: '山东',
+  value: 8976,
+  type: 'up',
+  category: [{
+    label: '可爱多',
+    value: 4080,
+    type: 'down',
+  }, {
+    label: '小洋人',
+    value: 1298,
+    type: 'down',
+  }, {
+    label: '八喜',
+    value: 6080,
+    type: 'up',
+  }, {
+    label: '好多鱼',
+    value: 10080,
+    type: 'up',
+  }, {
+    label: '娃哈哈',
+    value: 7880,
+    type: 'up',
+  }],
+}];

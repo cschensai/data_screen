@@ -11,13 +11,19 @@ import bar from './echartsJs/bar';
 import line from './echartsJs/line';
 import pie from './echartsJs/pie';
 // mock数据
-import { overviewData, monitorData, pointPanelData, userPanelData, orderTabs, orderPanelData, channelData, quarterSaleData } from './mock';
+import { overviewData, monitorData, pointPanelData, userPanelData, orderTabs,
+  orderPanelData, channelData, quarterSaleData, countryHotData, provinceHotprovinceHotData, provinceHotData } from './mock';
 import './index.less';
 
+const mapObj = {
+  up: 'iconarrow-up',
+  down: 'iconarrowdown',
+}
 export default class Demo2 extends Component {
   state = {
     currentTime: moment().format('YYYY年MM月DD日-HH时mm分ss秒'),
     tabVal: '365天',
+    activeLeftIndex: 0,
   }
   UNSAFE_componentWillMount() {
     this.timer1 = setInterval(() => {
@@ -71,10 +77,63 @@ export default class Demo2 extends Component {
   renderChannelData = () => {
     return channelData.map((channel, index) => (
       <div className="item" key={index}>
-        <div className="top"><span>{channel.value}</span>%</div>
+        <div className="top">{channel.value}<span className="unit">%</span></div>
         <div className="bottom"><i className={`iconfont ${channel.icon}`}></i>{channel.label}</div>
       </div>
     ))
+  }
+  renderCountryRank = (arr = []) => {
+    const mapObj = {
+      0: 'iconfirst',
+      1: 'iconsecond',
+      2: 'iconthird',
+    };
+    return arr.map((item, index) => {
+      return (
+        <div className="rank">
+          <i className={`iconfont ${mapObj[index]}`}></i>
+          <span>{ item }</span>
+        </div>
+      )
+    })
+  }
+  handleHover = index => {
+    this.setState({ activeLeftIndex: index });
+  }
+  renderProvinceLeft = (arr = []) => {
+    const { activeLeftIndex = 0 } = this.state;
+    return arr.map((item, index) => {
+      const activeIndexBool = index === activeLeftIndex;
+      return (
+        <div className={`leftItem ${activeIndexBool ? 'activeLeftItem' : ''}`} onMouseEnter={() => this.handleHover(index)}>
+          <span>{ item.label }</span>
+          <span>{ item.value.toLocaleString() }<i className={`iconfont ${mapObj[item.type]}`}></i></span>
+        </div>
+      )
+    })
+  }
+  renderProvinceRight = (arr = []) => {
+    return arr.map(item => {
+      return (
+        <div className="rightItem">
+          <span>{ item.label }</span>
+          <span>{ item.value.toLocaleString() }<i className={`iconfont ${mapObj[item.type]}`}></i></span>
+        </div>
+      )
+    })
+  }
+  renderProvinceRank = (arr = []) => {
+    const { activeLeftIndex = 0 } = this.state;
+    return (
+      <Fragment>
+        <div className="left">
+          {this.renderProvinceLeft(provinceHotData)}
+        </div>
+        <div className="right" >
+          {this.renderProvinceRight(provinceHotData[activeLeftIndex].category)}
+        </div>
+      </Fragment>
+    )
   }
   render() {
     const { currentTime, tabVal } = this.state;
@@ -172,12 +231,18 @@ export default class Demo2 extends Component {
               <div className="inner">
                 <div className="country">
                   <h3>全国热榜</h3>
+                  <div className="countryRank">
+                    {this.renderCountryRank(countryHotData)}
+                  </div>
                 </div>
                 <div className="province">
                   <h3>
                     各省热榜
                     <span className="subTitle">// <em>近30日</em> //</span>
                   </h3>
+                  <div className="provinceRank">
+                    {this.renderProvinceRank(provinceHotData)}
+                  </div>
                 </div>
               </div>
             </div>
