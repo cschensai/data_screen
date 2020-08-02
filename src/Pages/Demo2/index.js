@@ -126,12 +126,8 @@ export default class Demo2 extends Component {
     const { activeLeftIndex = 0 } = this.state;
     return (
       <Fragment>
-        <div className="left">
-          {this.renderProvinceLeft(provinceHotData)}
-        </div>
-        <div className="right" >
-          {this.renderProvinceRight(provinceHotData[activeLeftIndex].category)}
-        </div>
+        <div className="left">{this.renderProvinceLeft(provinceHotData)}</div>
+        <div className="right" >{this.renderProvinceRight(provinceHotData[activeLeftIndex].category)}</div>
       </Fragment>
     )
   }
