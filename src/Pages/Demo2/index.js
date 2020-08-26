@@ -105,7 +105,7 @@ export default class Demo2 extends Component {
     return arr.map((item, index) => {
       const activeIndexBool = index === activeLeftIndex;
       return (
-        <div className={`leftItem ${activeIndexBool ? 'activeLeftItem' : ''}`} onMouseEnter={() => this.handleHover(index)}>
+        <div key={index} className={`leftItem ${activeIndexBool ? 'activeLeftItem' : ''}`} onMouseEnter={() => this.handleHover(index)}>
           <span>{ item.label }</span>
           <span>{ item.value.toLocaleString() }<i className={`iconfont ${mapObj[item.type]}`}></i></span>
         </div>
@@ -113,9 +113,9 @@ export default class Demo2 extends Component {
     })
   }
   renderProvinceRight = (arr = []) => {
-    return arr.map(item => {
+    return arr.map((item, index) => {
       return (
-        <div className="rightItem">
+        <div className="rightItem" key={index}>
           <span>{ item.label }</span>
           <span>{ item.value.toLocaleString() }<i className={`iconfont ${mapObj[item.type]}`}></i></span>
         </div>
