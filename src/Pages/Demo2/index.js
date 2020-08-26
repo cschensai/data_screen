@@ -12,7 +12,7 @@ import line from './echartsJs/line';
 import pie from './echartsJs/pie';
 // mock数据
 import { overviewData, monitorData, pointPanelData, userPanelData, orderTabs,
-  orderPanelData, channelData, quarterSaleData, countryHotData, provinceHotprovinceHotData, provinceHotData } from './mock';
+  orderPanelData, channelData, quarterSaleData, countryHotData, provinceHotData } from './mock';
 import './index.less';
 
 const mapObj = {

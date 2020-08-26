@@ -1,5 +1,4 @@
 const CracoLessPlugin = require('craco-less');
-
 // less 配置
 module.exports = {
   plugins: [
