@@ -90,7 +90,7 @@ export default class Demo2 extends Component {
     };
     return arr.map((item, index) => {
       return (
-        <div className="rank">
+        <div className="rank" key={index}>
           <i className={`iconfont ${mapObj[index]}`}></i>
           <span>{ item }</span>
         </div>

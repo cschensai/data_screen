@@ -4,8 +4,8 @@ import 'echarts-gl';
 import 'echarts/map/js/world';
 import 'echarts/map/json/world.json';
 import worldImg from '../../../assets/pictures/world.topo.bathy.200401.jpg';
-import starfieldImg from '../../../assets/pictures/starfield.jpg';
-import pisaHdr from '../../../assets/pictures/pisa.hdr';
+// import starfieldImg from '../../../assets/pictures/starfield.jpg';
+// import pisaHdr from '../../../assets/pictures/pisa.hdr';
 
 export default function map(echarts) {
     // 实例化
@@ -34,7 +34,7 @@ export default function map(echarts) {
 							},
 							// 会使用纹理作为环境光的光源
 							ambientCubemap: {
-									texture: pisaHdr, // 纹理资源
+									texture: 'https://cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/pisa.hdr', // 纹理资源
 									diffuseIntensity: 0.2
 							}
 					}
