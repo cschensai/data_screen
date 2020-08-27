@@ -217,5 +217,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
     - echarts-gl github
       - https://github.com/ecomfe/echarts-gl/tree/master/test/asset
 
-
+- 
+``` js
+  // 目前只能使用相对路径，不能使用oss在线地址
+	globe: {
+					baseTexture: '../../xxx',
+					heightTexture: '../../xxx',
+```
 

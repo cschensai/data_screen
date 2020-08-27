@@ -5,7 +5,6 @@ import 'echarts/map/js/world';
 import 'echarts/map/json/world.json';
 import worldImg from '../../../assets/pictures/world.topo.bathy.200401.jpg';
 // import starfieldImg from '../../../assets/pictures/starfield.jpg';
-// import pisaHdr from '../../../assets/pictures/pisa.hdr';
 
 export default function map(echarts) {
     // 实例化
