@@ -14,4 +14,10 @@ module.exports = {
       },
     },
   ],
+  webpack: {
+    configure: (webpackConfig, { env, paths }) => {
+      webpackConfig.output.publicPath = '/dataScreen';
+      return webpackConfig;
+    }
+  },
 };
