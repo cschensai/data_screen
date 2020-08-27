@@ -17,7 +17,7 @@ const LoadingComp = () => <div style={{ width: '100%', textAlign: 'center', marg
 ReactDOM.render(
   <StrictMode>
     <Suspense fallback={<LoadingComp />}>
-      <BrowserRouter>
+      <BrowserRouter basename="/dataScreen">
         <Switch>
           <Redirect exact from="/" to="/demo1" />
           <Route path="/demo1" component={Demo1} />

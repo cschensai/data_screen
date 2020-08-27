@@ -16,7 +16,8 @@ module.exports = {
   ],
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
-      webpackConfig.output.publicPath = '/dataScreen';
+      const productionEnv = env === 'production';
+      webpackConfig.output.publicPath = productionEnv ? '/dataScreen/' : '/';
       return webpackConfig;
     }
   },
