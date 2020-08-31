@@ -1,14 +1,16 @@
+// less处理
+@blueColor: #4c9bfd;
 .demo2 {
   // 底部背景色
   // background-color: #101129;
-  background: url('https://cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/bg.png') no-repeat top center;
+  background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/bg.png') no-repeat top center;
   background-size: 100% 100%;
   min-height: 100vh;
   overflow-y: auto;
   line-height: 1.15;
   header {
     height: 1.25rem;
-    background: url('https://cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/head_bg.png') no-repeat;
+    background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/head_bg.png') no-repeat;
     background-size: 100% 100%;
     position: relative;
     h1 {
@@ -60,7 +62,7 @@
         border-width: .625rem .5rem .275rem 1.6rem;
         box-sizing: border-box;
         // 边框图片设置
-        border-image: url('https://cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/border.png');
+        border-image: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/border.png');
         border-image-repeat: stretch;
         border-image-slice: 50 40 22 128;
         border-image-width: .625rem .5rem .275rem 1.6rem;
@@ -97,7 +99,7 @@
               }
               label {
                 font-size: .175rem;
-                color: #4c9bfd;
+                color: @blueColor;
               }
             }
           }
@@ -111,12 +113,12 @@
               color: #5da6c6;
             }
             .rows {
-              color: #4c9bfd;
+              color: @blueColor;
             }
           }
         }
       }
-      // 公共样式
+      // less公共样式
       .commonContent() {
         .chart {
           flex: 2;
@@ -124,7 +126,7 @@
         }
         .desc {
           flex: 1;
-          background: url('https://cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/rect.png') no-repeat;
+          background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/rect.png') no-repeat;
           background-size: 100% 100%;
           .item {
             height: 50%;
@@ -146,7 +148,7 @@
               align-items: center;
               label {
                 font-size: .175rem;
-                color: #4c9bfd;
+                color: @blueColor;
               }
             }
           }
@@ -220,7 +222,7 @@
               }
               label {
                 font-size: .175rem;
-                color: #4c9bfd;
+                color: @blueColor;
               }
             }
           }
@@ -273,7 +275,7 @@
                 }
               }
               .bottom {
-                color: #4c9bfd;
+                color: @blueColor;
                 font-size: .15rem;
                 i {
                   margin-right: 5px;
@@ -311,7 +313,7 @@
                   }
                   label {
                     font-size: .15rem;
-                    color: #4c9bfd;
+                    color: @blueColor;
                   }
                 }
               }
@@ -354,7 +356,7 @@
                 }
                 span {
                   font-size: .225rem;
-                  color: #4c9bfd;
+                  color: @blueColor;
                 }
                 .iconfirst {
                   color: #df3936;
@@ -363,7 +365,7 @@
                   color: #68d8fe;
                 }
                 .iconthird {
-                  color: #4c9bfd;
+                  color: @blueColor;
                 }
               }
             }
@@ -402,7 +404,7 @@
               }
               .leftItem {
                 justify-content: space-between;
-                color: #4c9bfd;
+                color: @blueColor;
               }
               .rightItem {
                 justify-content: space-between;

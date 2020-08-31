@@ -127,6 +127,7 @@
 - 循环加key
 - 公共less处理（*）
   - 参考：https://www.jianshu.com/p/63131175a11a
+  - 详见：demo1/index.less、demo2/index.less
 - 定时器实例销毁
 
 #### 注意事项
@@ -150,7 +151,15 @@
   ```
 
 - 3D地球的引入
-
+  ```js
+    option = {
+      global: {
+        baseTexture: 本地路径/canvas/echarts实例,
+        // 地球高度纹理
+        heightTexture: 本地路径/canvas/echarts实例,
+      }
+    }
+    ```
   - 素材来源（需要官网github上去取）
     - echarts-gl github
       - https://github.com/ecomfe/echarts-gl/tree/master/test/asset
