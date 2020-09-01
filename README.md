@@ -164,4 +164,15 @@
     - echarts-gl github
       - https://github.com/ecomfe/echarts-gl/tree/master/test/asset
 
+### 学到什么
+- 屏幕适配方案：手淘方案flexible.js+rem
+- 按需加载
+- ehcarts开发应用
+  - Api开发查找方式
+    - series --> 各种图表大类
+    - 外层对应的是更细粒度的API
+    - 注意顺序以防止覆盖
+  - 配合现有组件开发
+  - 优化方案
+
 
