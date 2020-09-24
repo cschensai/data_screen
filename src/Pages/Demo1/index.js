@@ -74,7 +74,7 @@ export default class Demo1 extends Component {
       <div className="demo1">
         {/* 头部 */}
         <header>
-          <h1>数据可视化-调研1</h1>
+          <h1>数据可视化-调研01</h1>
           <span className="showTime">当前时间：{currentTime}</span>
         </header>
         {/* 主题 */}
