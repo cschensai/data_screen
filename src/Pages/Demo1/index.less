@@ -1,0 +1,223 @@
+// less处理
+@blueColor: #02a6b5;
+.absolute(@t: unset, @r: unset, @b: unset, @l: unset) {
+  position: absolute;
+  top: @t;
+  right: @r;
+  bottom: @b;
+  left: @l;
+}
+.wh(@w: 10px, @h: 10px) {
+  width: @w;
+  height: @h;
+}
+// 自定义数字字体
+@font-face {
+  font-family: electronicFont;
+  src: url('../../assets/font/DS-DIGIT.TTF');
+}
+.demo1 {
+  background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo1/bg.jpg') no-repeat top center;
+  background-size: 100% 100%;
+  line-height: 1.15;
+  min-height: 100vh;
+  overflow-y: auto;
+  header {
+    height: 1.25rem;
+    background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo1/head_bg.png') no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    h1 {
+      font-size: .475rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1rem;
+    }
+    .showTime {
+      .absolute(@t: 0, @r: .375rem);
+      line-height: .9375rem;
+      color: rgba(255, 255, 255, .7);
+      font-size: .25rem;
+    }
+  }
+  main {
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: .125rem .125rem 0;
+    display: flex;
+    // 公共样式
+    .column {
+      flex: 3;
+      &:nth-child(2){
+        flex: 5;
+        margin: 0 .125rem .1875rem;
+        display: flex;
+        flex-direction: column;
+      }
+      .panel {
+        height: 3.875rem;
+        border: 1px solid rgba(25, 186, 139, .17);
+        background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo1/line.png') no-repeat rgba(255, 255, 255, .04);
+        background-size: 100% 100%;
+        padding:  0 .1875rem .5rem;
+        margin-bottom: .1875rem;
+        position: relative;
+        &::before {
+          content: '';
+          .absolute(@t: 0px, @l: 0px);
+          .wh();
+          border-top: 2px solid @blueColor;
+          border-left: 2px solid @blueColor;
+        }
+        &::after {
+          content: '';
+          .absolute(@t: 0px, @r: 0px);
+          .wh();
+          border-top: 2px solid @blueColor;
+          border-right: 2px solid @blueColor;
+        }
+        .panelFooter {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          &::before {
+            content: '';
+            .absolute(@b: 0px, @l: 0px);
+            .wh();
+            border-bottom: 2px solid @blueColor;
+            border-left: 2px solid @blueColor;
+          }
+          &::after {
+            content: '';
+            .absolute(@b: 0px, @r: 0px);
+            .wh();
+            border-bottom: 2px solid @blueColor;
+            border-right: 2px solid @blueColor;
+          }
+        }
+        h2 {
+          height: .6rem;
+          line-height: .6rem;
+          color: #fff;
+          font-size: .25rem;
+          text-align: center;
+          font-weight: normal;
+        }
+        .chart {
+          height: 3rem;
+        }
+      }
+      .no {
+        background-color: rgba(101, 132, 226, .1);
+        padding: .1875rem;
+        .noHd {
+          border: 1px solid rgba(25, 186, 139, .17);
+          display: flex;
+          position: relative;
+          .noHdItem {
+            flex: 1;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: .875rem;
+            color: #ffeb7b;
+            text-align: center;
+            font-family: electronicFont;
+            position: relative;
+            &:nth-child(1) {
+              // 中间的竖线
+              &::after {
+                content: '';
+                .absolute(@t: 25%, @r: 0);
+                height: 50%;
+                border-left: 1px solid rgba(255, 255, 255, .2);
+              }
+            }
+          }
+          &::before {
+            content: '';
+            border-top: 2px solid @blueColor;
+            border-left: 2px solid @blueColor;
+            width: .375rem;
+            height: .125rem;
+            .absolute(@t: 0, @l: 0);
+          }
+          &::after {
+            content: '';
+            border-bottom: 2px solid @blueColor;
+            border-right: 2px solid @blueColor;
+            .wh(.375rem, .125rem);
+            .absolute(@b: 0, @r: 0);
+          }
+        }
+        .noBd {
+          display: flex;
+          .noBdItem {
+            flex: 1;
+            text-align: center;
+            color: rgba(255, 255, 255, .7);
+            font-size: .225rem;
+            height: .5rem;
+            line-height: .5rem;
+            padding-top: .125rem;
+          }
+        }
+      }
+      // 地图
+      @keyframes rotate1 {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes rotate2 {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+      .map {
+        flex: 1;
+        // height: 10.125rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .map1 {
+          .wh(6.475rem, 6.475rem);
+          background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo1/map.png');
+          background-size: 100% 100%;
+          opacity: .3;
+        }
+        .map2 {
+          .wh(7.4rem, 7.4rem);
+          position: absolute;
+          background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo1/lbx.png');
+          background-size: 100% 100%;
+          opacity: .6;
+          // 旋转动画
+          animation: rotate1 15s linear infinite;
+        }
+        .map3 {
+          .wh(7.075rem, 7.075rem);
+          position: absolute;
+          background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo1/jt.png');
+          background-size: 100% 100%;
+          opacity: .6;
+          // 旋转动画
+          animation: rotate2 15s linear infinite;
+        }
+        .chart {
+          .wh(100%, 100%);
+          .absolute(@t: 0, @l: 0);
+        }
+      }
+    }
+  }
+}

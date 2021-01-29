@@ -1,0 +1,423 @@
+// less处理
+@blueColor: #4c9bfd;
+.demo2 {
+  // 底部背景色
+  // background-color: #101129;
+  background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/bg.png') no-repeat top center;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  line-height: 1.15;
+  header {
+    height: 1.25rem;
+    background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/head_bg.png') no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    h1 {
+      font-size: .475rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1rem;
+    }
+    .showTime {
+      position: absolute;
+      top: 0;
+      right: .375rem;
+      line-height: .9375rem;
+      color: rgba(255, 255, 255, .7);
+      font-size: .25rem;
+    }
+    .decoration5 {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 5rem;
+      height: .375rem;
+      // 剧中
+      transform: translateX(-50%);
+    }
+  }
+  // 主体部分
+  main {
+    // 防止内容图片在无限缩小时看不清
+    min-width: 1024px;
+    // 保证内容图片无限放大时不失真
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: .125rem .125rem 0;
+    display: flex;
+    color: #fff;
+    // columns： 3:5:3
+    .column {
+      height: fit-content;
+      flex: 3;
+      &:nth-child(2){
+        flex: 4;
+        margin: 0 .125rem;
+      }
+      // 公共边框设置
+      .panel {
+        border-style: solid;
+        border-color: red;
+        border-width: .625rem .5rem .275rem 1.6rem;
+        box-sizing: border-box;
+        // 边框图片设置
+        border-image: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/border.png');
+        border-image-repeat: stretch;
+        border-image-slice: 50 40 22 128;
+        border-image-width: .625rem .5rem .275rem 1.6rem;
+        margin-bottom: .1875rem;
+        position: relative;
+        // 内容区域
+        .inner {
+          position: absolute;
+          top: -0.625rem;
+          right: -0.5rem;
+          bottom: -0.275rem;
+          left: -1.6rem;
+          padding: .25rem .375rem;
+        }
+      }
+      .overview {
+        height: 1.35rem;
+        .inner {
+          display: flex;
+          align-items: center;
+          .item {
+            flex: 1;
+            text-align: center;
+            p {
+              font-size: .3rem;
+              margin-bottom: .125rem;
+            }
+            .bottom {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              i {
+                font-size: .3rem;
+              }
+              label {
+                font-size: .175rem;
+                color: @blueColor;
+              }
+            }
+          }
+        }
+      }
+      .monitor {
+        height: 5.925rem;
+        .inner {
+          .dv-scroll-board {
+            .header {
+              color: #5da6c6;
+            }
+            .rows {
+              color: @blueColor;
+            }
+          }
+        }
+      }
+      // less公共样式
+      .commonContent() {
+        .chart {
+          flex: 2;
+          margin-right: .1875rem;
+        }
+        .desc {
+          flex: 1;
+          background: url('//cs-static-assets.oss-cn-beijing.aliyuncs.com/data_screen/demo2/rect.png') no-repeat;
+          background-size: 100% 100%;
+          .item {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+              color: #fff;
+              font-size: .275rem;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            i {
+              font-size: .3rem;
+            }
+            .bottom {
+              display: flex;
+              align-items: center;
+              label {
+                font-size: .175rem;
+                color: @blueColor;
+              }
+            }
+          }
+        }
+      }
+      .point {
+        height: 4.2rem;
+        .inner {
+          h3 {
+            height: .45rem;
+            line-height: .45rem;
+            color: #fff;
+            font-size: .25rem;
+            font-weight: normal;
+            text-align: center;
+          }
+          .content {
+            height: 3.25rem;
+            display: flex;
+            .commonContent();
+          }
+        }
+      }
+      // 地图样式
+      .map {
+        height: 6.5125rem;
+        margin-bottom: .1875rem;
+        .chart {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .user {
+        height: 5.1625rem;
+        .inner {
+          h3 {
+            height: .45rem;
+            line-height: .45rem;
+            color: #fff;
+            font-size: .25rem;
+            font-weight: normal;
+            text-align: center;
+          }
+          .content {
+            height: 4.2125rem;
+            display: flex;
+            .commonContent();
+            .chart {
+              flex: 3;
+            }
+          }
+        }
+      }
+      .order {
+        height: 1.8rem;
+        .desc {
+          display: flex;
+          .item {
+            flex: 1;
+            text-align: center;
+            p {
+              font-size: .3rem;
+              margin-bottom: .125rem;
+            }
+            .bottom {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              i {
+                font-size: .3rem;
+              }
+              label {
+                font-size: .175rem;
+                color: @blueColor;
+              }
+            }
+          }
+        }
+      }
+      .sale {
+        height: 3.25rem;
+        .inner {
+          h3 {
+            height: .45rem;
+            line-height: .45rem;
+            color: #fff;
+            font-size: .25rem;
+            font-weight: normal;
+            text-align: center;
+          }
+          .chart {
+            height: 2.3rem;
+          }
+        }
+      }
+      .wrap {
+        display: flex;
+        .channel,
+        .quarter {
+          flex: 1;
+          height: 2.6625rem;
+        }
+        // 标题
+        h3 {
+          font-size: .25rem;
+        }
+        .channel {
+          margin-right: .1875rem;
+          .inner {
+            .item {
+              width: 50%;
+              height: .9875rem;
+              display: inline-flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              .top {
+                margin-bottom: 10px;
+                font-size: .25rem;
+                margin-bottom: .0625rem;
+                .unit {
+                  font-size: .15rem;
+                  margin-left: 5px;
+                }
+              }
+              .bottom {
+                color: @blueColor;
+                font-size: .15rem;
+                i {
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+        }
+        .quarter {
+          .inner {
+            display: flex;
+            flex-direction: column;
+            .chart {
+              flex: 1;
+            }
+            .desc {
+              display: flex;
+              .item {
+                flex: 1;
+                text-align: center;
+                p {
+                  font-size: .25rem;
+                  margin-bottom: .0625rem;
+                  .unit {
+                    font-size: .15rem;
+                    margin-left: 5px;
+                  }
+                }
+                .bottom {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  i {
+                    font-size: .3rem;
+                  }
+                  label {
+                    font-size: .15rem;
+                    color: @blueColor;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .hot {
+        height: 3.6125rem;
+        .inner {
+          display: flex;
+          // 标题
+          h3 {
+            font-size: .25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .subTitle {
+              font-weight: normal;
+              font-size: .175rem;
+              color: #519bac;
+            }
+          }
+          .country {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .countryRank {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              margin-right: .1875rem;
+              .rank {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                i {
+                  font-size: .45rem;
+                }
+                span {
+                  font-size: .225rem;
+                  color: @blueColor;
+                }
+                .iconfirst {
+                  color: #df3936;
+                }
+                .iconsecond {
+                  color: #68d8fe;
+                }
+                .iconthird {
+                  color: @blueColor;
+                }
+              }
+            }
+          }
+          .province {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            .provinceRank {
+              margin-top: .125rem;
+              flex: 1;
+              display: flex;
+              font-size: .2rem;
+              .left,
+              .right {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                .leftItem,
+                .rightItem {
+                  flex: 1;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 .125rem;
+                  i {
+                    margin-left: 5px;
+                    font-size: .175rem;
+                  }
+                  .iconarrow-up {
+                    color: #dc3c33;
+                  }
+                  .iconarrowdown {
+                    color: #36be90;
+                  }
+                }
+              }
+              .leftItem {
+                justify-content: space-between;
+                color: @blueColor;
+              }
+              .rightItem {
+                justify-content: space-between;
+                color: #40c9d3;
+                background-color: rgba(76, 155, 253, .1);
+              }
+              .activeLeftItem {
+                background-color: rgba(76, 155, 253, .1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
