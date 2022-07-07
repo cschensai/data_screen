@@ -11,7 +11,7 @@
     "echarts": "^4.8.0",
     "echarts-gl": "^1.1.1",
     "global": "^4.4.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
